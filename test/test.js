@@ -14,7 +14,7 @@ describe('Dev Env', function() {
         const branch = branchName();
         if (branch === 'dev') {
             // assertions
-            assert.equal(branch,'dev');s
+            assert.equal(branch,'dev');
         } else {
             this.skip();
         }
