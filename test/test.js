@@ -1,5 +1,4 @@
 var assert = require('assert');
-const branchName = require('current-git-branch');
 
 describe('Array', function () {
   describe('#indexOf()', function () {
@@ -11,7 +10,7 @@ describe('Array', function () {
 
 describe('Dev Env', function() {
     it('should run only on dev env', function () {
-        const branch = branchName();
+        const branch = process.env.NODE_ENV;
         if (branch === 'dev') {
             // assertions
             assert.equal(branch,'dev');
