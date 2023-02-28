@@ -1,4 +1,6 @@
 var assert = require('assert');
+var expect = require('chai').expect;
+
 const branchName = require('current-git-branch');
 const feature = {
 	documentationSample: ['dev','staging']
