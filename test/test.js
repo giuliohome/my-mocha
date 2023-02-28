@@ -1,5 +1,9 @@
 var assert = require('assert');
 
+const feature = {
+	documentationSample: ['dev','staging']
+}
+
 describe('Array', function () {
   describe('#indexOf()', function () {
     it('should return -1 when the value is not present', function () {
@@ -11,9 +15,9 @@ describe('Array', function () {
 describe('Dev Env', function() {
     it('should run only on dev env', function () {
         const branch = process.env.NODE_ENV;
-        if (branch === 'dev') {
+        if ( feature['documentationSample'].includes(branch) ) {
             // assertions
-            assert.equal(branch,'dev');
+            expect(['dev','staging']).to.include(branch);
         } else {
             this.skip();
         }
