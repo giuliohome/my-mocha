@@ -3,9 +3,6 @@ const branchName = require('current-git-branch');
 const feature = {
 	documentationSample: ['dev','staging']
 }
-const branch = branchName();
-
-
 
 describe('Array', function () {
   describe('#indexOf()', function () {
