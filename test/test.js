@@ -1,5 +1,11 @@
 var assert = require('assert');
 const branchName = require('current-git-branch');
+const feature = {
+	documentationSample: ['dev','staging']
+}
+const branch = branchName();
+
+
 
 describe('Array', function () {
   describe('#indexOf()', function () {
@@ -12,9 +18,9 @@ describe('Array', function () {
 describe('Dev Env', function() {
     it('should run only on dev env', function () {
         const branch = branchName();
-        if (branch === 'dev') {
+        if ( feature['documentationSample'].includes(branch) ) {
             // assertions
-            assert.equal(branch,'dev');
+            expect(['dev','staging']).to.include(branch);
         } else {
             this.skip();
         }
